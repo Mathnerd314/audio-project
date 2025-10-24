@@ -1,10 +1,5 @@
 title: Audio Project
 description: Basic notes on my audio project
-plugins:
-  - jekyll-relative-links
-relative_links:
-  enabled: true
-  collections: true
 theme: just-the-docs
 
 url: https://mathnerd314.github.io/audio-project/
