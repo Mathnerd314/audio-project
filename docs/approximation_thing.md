@@ -1,3 +1,7 @@
+---
+title: Ideal Filtering
+---
+
 # Approximation of continuous-time filtering via discrete convolution after ideal reconstruction
 
 Nice — this is a great line of thought. Short answer up-front: **yes, it’s mathematically tractable and (under the usual bandlimited assumption) equivalent to a discrete convolution with the continuous filter sampled at the sampling instants.** Whether it’s efficient in practice depends on how fast that sampled impulse decays (which you can exploit), and on whether you prefer block FFT methods or a truncated FIR / IIR fit. Below I walk through the math, the equivalence, time-decay behavior, and practical implementation/optimization strategies (with concrete tradeoffs).

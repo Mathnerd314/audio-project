@@ -1,3 +1,6 @@
+---
+title: Testing strategy for used speakers
+---
 # Testing strategy for used speakers before buying
 
 ## Bring equipment

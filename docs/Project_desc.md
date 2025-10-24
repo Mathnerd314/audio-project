@@ -1,3 +1,7 @@
+---
+title: Project Description
+nav_order: 1
+---
 # Project: Active Sound System Build
 
 ## Problem Statement

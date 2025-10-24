@@ -1,3 +1,6 @@
+---
+title: Staged Surround system build
+---
 # Staged build
 
 I want a surround sound 7.2.4 system, but I don't want to buy it all at once. I've come up with a plan to start with nothing and build it up gradually, speaker by speaker, until I have the full system. Look at my plan critically and decide if that speaker is actually the best choice at that stage, or if I should buy a different speaker instead to get the best improvement in audio quality. I should explain that there is a hard constraint to buy speakers one at a time. You can't just say "lol no I'll buy 2". certainly it makes sense to organize the buying as buying in pairs, so that you spend as little time with an odd number of speakers as possible, but you can't skip rows of the table. And if you have an odd number of speakers, I think the most logical place to put them center aligned, although the room layout might make that impractical. I should also clarify that this is not home theater-centric, I am more concerned with the acoustic quality of each individual stage of the journey. My real priority is stereo music playback, and then stereo video playback such as YouTube, and then to a much lesser extent Dolby Atmos music, and then Blu-Ray movies are a distant fourth.

@@ -1,3 +1,7 @@
+---
+title: Complete DIY Multi-Channel USB-Driven Speaker System Plan
+---
+
 # Complete DIY Multi-Channel USB-Driven Speaker System Plan
 
 ## Overview and Workflow

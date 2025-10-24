@@ -1,3 +1,6 @@
+---
+title: Max Volume Calculation
+---
 # Speaker Driver Max Volume Calculation
 
 ## Mechanical Limits

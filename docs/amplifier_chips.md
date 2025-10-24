@@ -1,4 +1,6 @@
-# Audio IC & Amplifier Reference Guide
+---
+title: Audio IC & Amplifier Reference Guide
+---
 
 ## Popular Audio Amp Chips
 

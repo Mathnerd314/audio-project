@@ -1,3 +1,7 @@
+---
+title: Measurement & DSP workflow
+---
+
 # Measurement & DSP workflow (concrete, actionable)
 
 Below is a workflow you can run, since you want to get deep into DSP and automation.
