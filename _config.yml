@@ -3,5 +3,7 @@ plugins:
 relative_links:
   enabled: true
   collections: true
+theme: just-the-docs
+url: https://mathnerd314.github.io/audio-project/
 include:
   - docs
