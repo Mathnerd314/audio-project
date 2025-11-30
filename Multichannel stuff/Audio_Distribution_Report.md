@@ -19,9 +19,9 @@ This report describes a practical, cost-effective architecture for distributing 
 
 | Component | Part Number | Qty | Unit Price | Total | Notes |
 |-----------|------------|-----|-----------|-------|-------|
-| Raspberry Pi 4B (8GB) | RPi4-8GB | 1 | $48.20 | $48.20 | USB audio host, SPI master, DSP engine |
-| Raspberry Pi Pico 2 | RP2350 | 3 | $5.00 | $15.00 | Audio re-clockers (10ch each) |
-| NDK Crystal Oscillator | NSC5083D-49.152M | 1 | $2.83 | $2.83 | Ultra-low jitter reference (43 fs) |
+| Raspberry Pi 4B (8GB) | RPi4-8GB | 1 | [$48.20](https://www.digikey.com/en/products/detail/raspberry-pi/SC0193-9/10258782) | $48.20 | USB audio host, SPI master, DSP engine |
+| Raspberry Pi Pico 2 | RP2350 | 3 | [$5.00](https://www.digikey.com/en/products/detail/raspberry-pi/SC1631/24627136) | $15.00 | Audio re-clockers (10ch each) |
+| NDK Crystal Oscillator | NSC5083D-49.152M | 1 | [$2.83](https://www.digikey.com/en/products/detail/ndk-nihon-dempa-kogyo-co-ltd/NSC5083D-49-152M/13982350) | $2.83 | Ultra-low jitter reference (43 fs) |
 | **Subtotal (Primary)** | | | | **$66.03** | |
 
 ### 1.2 Crystal Oscillator Support Components
@@ -35,9 +35,9 @@ The NDK NSC5083D is a bare crystal resonator. To create a functional 49.152 MHz 
 | Capacitor (Bypass) | 100 nF | 1 | $0.02 | $0.02 | Power supply decoupling |
 | Resistor (Feedback) | 2.2 MΩ | 1 | $0.08 | $0.08 | Pierce oscillator feedback |
 | Capacitor (Supply) | 100 nF | 4 | $0.02 | $0.08 | Buffer power decoupling |
-| Clock Buffer IC | TI LMK1C110x | 1 | $3.50 | $3.50 | 1-to-4 LVCMOS fanout (<50 fs jitter) |
-| Single-Layer PCB | 50mm × 50mm | 1 | $6.00 (introductory rate) | $6.00 | Crystal PCB |
-| **Subtotal (Crystal)** | | | | **$9.78** | |
+| Clock Buffer IC | TI LMK1C1108APWR | 1 | [$3.11](https://www.digikey.com/en/products/detail/texas-instruments/LMK1C1108APWR/26812430) | $3.11 | 1-to-8 LVCMOS fanout (<50 fs jitter) |
+| Single-Layer PCB | 50mm × 50mm | 1 | $6.00 ([introductory rate](https://www.allpcb.com/)) | $6.00 | Crystal PCB |
+| **Subtotal (Crystal)** | | | | **$9.57** | |
 
 ### 1.3 Power Supply Components
 
@@ -52,10 +52,10 @@ The NDK NSC5083D is a bare crystal resonator. To create a functional 49.152 MHz 
 | Category | Total |
 |----------|-------|
 | **Primary Electronics** | $66.03 |
-| **Crystal Oscillator Circuit** | $9.78 |
-| **Subtotal (vs. XMOS)** | $75.81 |
+| **Crystal Oscillator Circuit** | $9.57 |
+| **Subtotal (vs. XMOS)** | $75.60 |
 | **Power Supplies & Regulators** | $37.00 |
-| **GRAND TOTAL** | **$112.81** |
+| **GRAND TOTAL** | **$112.60** |
 
 ---
 
