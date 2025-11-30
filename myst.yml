@@ -1,0 +1,16 @@
+# See docs at: https://mystmd.org/guide/frontmatter
+version: 1
+project:
+  id: 595d1ed2-4a5c-45fc-81c7-e7ebfbabc998
+  # title:
+  # description:
+  # keywords: []
+  # authors: []
+  github: https://github.com/Mathnerd314/audio-project
+  # todo: use `myst init --write-toc` and then edit the toc as needed
+    
+site:
+  template: book-theme
+  # options:
+  #   favicon: favicon.ico
+  #   logo: site_logo.png

@@ -1,1 +1,0 @@
-# just-the-docs-template
