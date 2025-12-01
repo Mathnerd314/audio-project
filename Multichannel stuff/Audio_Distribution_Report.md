@@ -44,7 +44,7 @@ The NDK NSC5083D is a bare crystal resonator. To create a functional 49.152 MHz 
 | Component | Part Number | Qty | Unit Price | Total | Notes |
 |-----------|------------|-----|-----------|-------|-------|
 | 5V Logic Supply | Mean Well RS-15-5 | 1 | $25.00 | $25.00 | 5A, SMPS, Pi 4 & Pico main power |
-| 3.3V Ultra-Low Noise LDO | LT3042 Module | 1 | $12.00 | $12.00 | Analog audio rail (< 1 µVrms) |
+| 3.3V Ultra-Low Noise LDO | LT3045 Module | 1 | $12.00 | $12.00 | Analog audio rail (< 1 µVrms) |
 | **Subtotal (Power)** | | | | **$37.00** | |
 
 ### 1.4 Total Bill of Materials
@@ -202,7 +202,7 @@ Since the PC and local NDK crystals are asynchronous, they drift relative to eac
 ### Section 3: Crystal Oscillator Design
 
 **Topology:**
-- LT3042 Ultra-Low Noise LDO Power Supply
+- LT3045 Ultra-Low Noise LDO Power Supply
 - Pierce Oscillator with NDK NSC5083D Crystal
 - LMK1C110x Clock Buffer
 
@@ -210,11 +210,10 @@ Since the PC and local NDK crystals are asynchronous, they drift relative to eac
 - The NDK NSC5083D is a high-Q AT-cut crystal with excellent phase noise (~–150 dBc/Hz @ 10kHz offset).
 - A Pierce oscillator is the lowest-noise topology for this frequency range.
 - The LMK1C110x provides jitter-free fanout to the Picos and DACs.
-- On-board regulation with LT3042 ensures ultra-clean power, minimizing phase noise degradation.
+- On-board regulation with LT3045 ensures ultra-clean power, minimizing phase noise degradation.
 
 **Pinout Description:**
-The LT3042 LDO takes 5V input and provides a clean 3.3V rail to the Pierce oscillator and LMK1C110x.
-
+The LT3045 LDO takes 5V input and provides a clean 3.3V rail to the Pierce oscillator and LMK1C110x. It also provides external power for the 3.3V DACs.
 The LMK1C110x clock buffer drives:
 - Pico 1 (GPIO 20)
 - Pico 2 (GPIO 20)
@@ -287,15 +286,17 @@ The LMK1C110x clock buffer drives:
 
 ### 5.2 The "Clean" 3.3V Rail Strategy
 
-**Problem:** Do NOT use the 3.3V pin from the Raspberry Pi 4 or Pico 2's internal regulator for the NDK Crystal or DAC Analog supply. These rails have significant ripple (often >50 mV) from CPU load transients.
+**Problem:** Do NOT use the 3.3V pin from the Raspberry Pi 4 or Pico 2's internal regulator for the NDK Crystal. These rails have significant ripple (often >50 mV) from CPU load transients.
 
 **Solution: The LT3042 Ultra-Low Noise LDO**
 - **Component:** LT3042 Regulator Module (or ADM7150).
 - **Performance:** < 1 µVrms noise (vs. ~1000 µVrms for standard regulators).
 - **Configuration:**
   - Input: 5.0V from the main Logic Supply.
-  - Output: 3.3V dedicated to Crystal, Clock Buffer, and DAC Analog VDD.
+  - Output: 3.3V dedicated to Crystal and Clock Buffer.
 - **Result:** The clock source operates in a "silence bubble," immune to Pi 4's USB/SPI activity.
+
+What about using the Pi 4 / Pico 2's 3.3V pin for the DACs? Also not a good idea, due to the ripple. Using an LT3045 or similar with sufficient capacity for crystal + DACs offers cost/simplicity benefits. For best performance, isolating the domains by a ferrite bead + 100 uF capacitor for the crystal and 0.1 ohm resistor for the DACs will ensure minimal cross-talk.
 
 ### 5.3 Grounding Topology: "Star-of-Stars"
 
@@ -308,7 +309,7 @@ Ground loops are the primary cause of hum and jitter. We employ a hierarchical S
 
 **Clean Ground Hub (Analog):**
 - The (–) output pin of the LT3042 LDO.
-- Connects: NDK Crystal GND, Buffer GND, DAC Analog GND.
+- Connects: NDK Crystal GND, Buffer GND, DAC GNDs.
 - *Path:* Quiet, constant reference currents.
 
 **The Bridge:**
